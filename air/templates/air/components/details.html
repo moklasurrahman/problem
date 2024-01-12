@@ -1,0 +1,212 @@
+
+
+
+
+
+
+{% load custom_func %}
+
+<article class="full-width">
+    <div class="d-flex details">
+    
+        {% for itinerary in offer.itineraries %}
+            
+                <div class="flight-item">
+                 
+                 
+                    <div class="summary-line">
+                        <div class="airline-info">
+                            <img src={{ itinerary.seg_first.airlineLogo }} alt={{ itinerary.seg_first.airline }} />
+                            <div>
+                                <span>{{ itinerary.seg_first.airline_name }}</span>
+                            </div>
+                        </div>
+                        <div class="segment-info">
+                            <div class="text-left">
+                                <span class="hour">{{ itinerary.seg_first.departureHour }}</span>
+                                <span class="airport">{{ itinerary.seg_first.departureAirport }}</span>
+                            </div>
+                            <div class="total-steps">
+                                <span>{{ itinerary.numberOfStops }} stop{{ itinerary.numberOfStops|pluralize }}</span>
+                                <span class="arrow-pointer"></span>
+                                <span>{{ itinerary.lines|slice:"1:-1"|join:", " }}</span>
+                            </div>
+                            <div class="text-left">
+                                <span class="hour">{{ itinerary.seg_last.arrivalHour }}</span>
+                                <span>{{ itinerary.seg_last.arrivalAirport }}</span>
+                            </div>
+                            <div class="total-duration">
+                                <span>{{ itinerary.totalDuration }}</span>
+                            </div>
+                        </div>
+                        <div class="price-info">
+                            <div>
+                                <span>{{ offer.currency }}</span>
+                                <span>{{ offer.price }}</span>
+                            </div>
+                            <a href="{% url 'book_review' offer.flight|base64_encode %}" class="select-button">
+                                Select
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="detailed-line">
+                        <div class="bottom-links">
+                            
+                            <div class="show-more show-more-btn">
+                                <a class="toggle-icon" data-bs-toggle="collapse" href="#a{{ counter }}"  aria-expanded="false" aria-controls="a{{ counter }}">
+                                    Partially Refundable
+                                    <i class="fas fa-chevron-down"></i>
+                                </a> 
+                            </div>
+                            
+                              <div class="show-more detail">
+                                <a class="toggle-icon" data-bs-toggle="collapse" href="#a{{ counter }}"  aria-expanded="false" aria-controls="a{{ counter }}">
+                                    Flight Details
+                                    <i class="fas fa-chevron-down"></i>
+                                </a>
+                              </div> 
+
+                          </div>
+                        
+                        <div class="fliate-details collapse" id="a{{ counter }}">
+                            <div class="custome-row">
+                                <div class="custome-col flit-booked-system">
+                                    <h4>Flight Details</h4>
+                                    {% for stop in itinerary.segments %}     
+                                    <div class="flit-wrapper">
+                                        <div class="flite-info">
+                                            <div class="sticky-location">
+                                                <p>{{ stop.departureAirport }} - {{ stop.arrivalAirport }}</p>
+                                            </div>
+                                            <div class="custome-row">
+                                                <div class="col-small flite-img">
+                                                    <img src="{{ stop.airlineLogo }}" alt="{{ stop.airline }}" />
+                                                </div>
+                                                <div class="col-big flite-name">
+                                                    <h5>{{ stop.airline_name }}</h5>
+                                                </div>
+                                                <div class="col-small flite-class">
+                                                    <span>({{ stop.cabin|capfirst }})</span>
+                                                </div>       
+                                            </div>
+                                        </div>
+                                        <div class="flite-timing">
+                                            <div class="custome-row">
+                                                <div class="col-custome flight-duration">
+                                                    <p class="flite-time-up">{{ stop.departureAt|date:"H:i" }}</p>
+                                                    <p class="flite-date-up">{{ stop.departureAt|date:"D, d M, Y" }}</p>
+                                                    <p class="flite-location-up">{{ stop.departureAirport }} </p>
+                                                </div>
+                                                <div class="col-custome flite-line-up">
+                                                    <div class="arrow-pointer"></div>
+                                                    <p> {{ stop.arrivalDuration }}</p>
+                                                </div>
+                                                <div class="col-custome flight-arrivale">
+                                                    <p class="flite-time-up">{{ stop.arrivalAt|date:"H:i" }}</p>
+                                                    <p class="flite-date-up">{{ stop.arrivalAt|date:"D, d M, Y" }}</p>
+                                                    <p class="flite-location-up">{{ stop.arrivalAirport }}</p>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                    </div>
+                            
+
+
+                                        {% if stop.stop_time %}
+                                            <div class="layover">
+                                                Change plane at
+                                                <span>
+                                                    {{ stop.arrivalAirport }} | {{ stop.stop_time }} layover
+                                                <span>
+                                            </div>
+                                        {% endif %}  
+                                    {% endfor %}
+                                </div>   
+                                <div class="custome-col flite-tab">
+                                    <div class="baggage-fare-policy" id="baggage-fare-policy-{{ itinerary.seg_first.id }}-{{ itinerary.seg_last.id }}">
+                                        <div class="flit-tabs-cta">
+                                            <ul>
+                                                <li><a href="#baggage-{{ itinerary.seg_first.id }}-{{ itinerary.seg_last.id }}">Baggage</a></li>
+                                                <li><a href="#fare-{{ itinerary.seg_first.id }}-{{ itinerary.seg_last.id }}">Fare</a></li>
+                                                <li><a href="#policy-{{ itinerary.seg_first.id }}-{{ itinerary.seg_last.id }}">Policy</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="flit-tab-content ">
+                                            <div class="baggage-table" id="baggage-{{ itinerary.seg_first.id }}-{{ itinerary.seg_last.id }}">
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Flight</th>
+                                                            <th>Cabin</th>
+                                                            <th>Checked Bags</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {% for stop in itinerary.segments %}
+                                                        <tr>
+                                                            <td>{{ stop.departureAirport }} - {{ stop.arrivalAirport }}</td>
+                                                            <td>{{ stop.cabin }}</td>
+                                                            <td>{{ stop.includedCheckedBags }}</td>
+                                                        </tr>
+                                                        {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                    
+                                            <div class="fare-table" id="fare-{{ itinerary.seg_first.id }}-{{ itinerary.seg_last.id }}">
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Fare Summary</th>
+                                                            <th>Total</th>
+                                                            <th>Base</th>
+                                                            <th>Tax</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                            
+                                                        <tr>
+                                                            <td>{{ itinerary.prices.0.travelerType }} x {{offer.traveler_count}}</td>
+                                                            <td>{{ offer.price | floatformat:2 }}<br>({{ itinerary.prices.0.total }} x {{offer.traveler_count}})</td>
+    
+                                                            {% with base_price=itinerary.prices.0.base|floatformat:2 %}
+                                                            <td>{{ base_price|multiply:offer.traveler_count }}<br>({{ itinerary.prices.0.base|floatformat:2 }} x {{offer.traveler_count}})</td>
+                                                            {% endwith %}
+    
+                                                            {% with result=itinerary.prices.0.total|floatformat:2|subtract:itinerary.prices.0.base|floatformat:2 %}
+                                                            <td>{{ result|multiply:offer.traveler_count|floatformat:2 }}<br>({{ itinerary.prices.0.total|floatformat:2|subtract:itinerary.prices.0.base|floatformat:2 }} x {{offer.traveler_count}})</td>
+                                                            {% endwith %}
+                                                        </tr>
+                                                    
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                    
+                                            <div class="policy-table" id="policy-{{ itinerary.seg_first.id }}-{{ itinerary.seg_last.id }}">
+                                                <div class="title">
+                                                    <span>Booking Policy</span>
+                                                </div>
+                                                <div class="content-line">
+                                                    <span> {{ airline_policy|safe }} </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                    
+                                </div>   
+                            </div>
+                        </div> 
+                      
+                    
+                    </div>
+                </div>
+               
+            
+        {% endfor %}
+    
+    </div>
+</article>
+
+

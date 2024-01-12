@@ -1,0 +1,412 @@
+{% extends "layouts/base-new.html" %}
+ {% load i18n %}
+  {% block head_style %}
+<link
+  rel="stylesheet"
+  href="/static/plugins/intl-tel-input/css/intlTelInput.css"
+/>
+<link rel="stylesheet" href="/static/css/footer.css" />
+{% endblock head_style %}
+ {% block header %}
+  {% include "layouts/header.html" %}
+{% endblock header %}
+ {% block content %}
+
+
+
+ <main class="main">
+  <div class="centering-wrap d-flex justify-content-center">
+    <div class="login-form">
+      <!--latest offers-->
+      <header class="s-title"></header>
+      <div class="singin-singup-card b p-4 mt-5">
+        <form
+          class="h-100 w-100"
+          id="form_login"
+          method="POST"
+          action="{% url 'account_login' %}"
+        >
+          {% csrf_token %}
+          <div>{{form.non_field_errors}}</div>
+          <div class="login-phone-btn">
+            <button class="w-100 btn btn-secondary login-with-mobile">
+              <i class="fa-regular fa-phone"></i>
+              <small>Login With Mobile Number</small>
+            </button>
+          </div>
+
+
+          <div class="line-container">
+            <p class="login-with-mobile-line"><span>OR</span></p>
+          </div>
+          <!--
+                        <div class="f-item full-width">
+                            <label for="{{ form.login.id_for_label }}">Email</label>
+                            <input type="text" name="login" placeholder="Email" autocomplete="email" required="">
+                            {{ form.login.errors }}
+                            <ul id="phoneError" class="errorlist"></ul>
+                        </div>
+                        -->
+          <h4 class="mb-2">Sing In</h4>
+          <div class="field-wrapper">
+            <span
+              ><div
+                class="brand-group-input d-flex align-items-center border rounded error"
+              >
+                <div class="icon px-1"><i class="fas fa-envelope"></i></div>
+                <div class="flex-grow-1 h">
+                  <div role="group" class="form-group m-0">
+                    <label for="login" class="d-block">Email</label>
+                    <div>
+                      <div role="group" class="input-group">
+                        <input
+                          id="login"
+                          name="login"
+                          type="email"
+                          placeholder="someone@example.com"
+                          autocomplete="email"
+                          class="bg-transparent border-0 p-0 m-0 rounded-0 form-control"
+                        /><!---->
+                        <div
+                          data-lastpass-icon-root="true"
+                          style="
+                            position: relative !important;
+                            height: 0px !important;
+                            width: 0px !important;
+                            float: left !important;
+                          "
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% if form.login.errors %}<small class="text-danger"
+                >{{ form.login.errors }}</small
+              >{% endif %}
+            </span>
+          </div>
+          <div class="field-wrapper">
+            <span
+              ><div
+                class="brand-group-input d-flex align-items-center border rounded error"
+              >
+                <div class="icon px-1"><i class="fas fa-lock"></i></div>
+                <div class="flex-grow-1 h">
+                  <div role="group" class="form-group m-0">
+                    <label for="password" class="d-block">Password</label>
+                    <div>
+                      <div role="group" class="input-group">
+                        <input
+                          id="password"
+                          name="password"
+                          type="password"
+                          placeholder="somePassword"
+                          class="bg-transparent border-0 p-0 m-0 rounded-0 form-control"
+                        /><!---->
+                        <div
+                          data-lastpass-icon-root="true"
+                          style="
+                            position: relative !important;
+                            height: 0px !important;
+                            width: 0px !important;
+                            float: left !important;
+                          "
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% if form.password.errors %}<small class="text-danger"
+                >{{ form.password.errors }}</small
+              >{% endif %}
+            </span>
+          </div>
+          {% if redirect_field_value %}
+          <input
+            type="hidden"
+            name="{{ redirect_field_name }}"
+            value="{{ redirect_field_value }}"
+          />
+          {% endif %}
+
+          <div class="f-item full-width">
+            <p class="forgot-password-link">
+              <a
+                href="{% url 'account_reset_password' %}"
+                title="Forgot password?"
+                >Forgot password?</a
+              >
+            </p>
+            <input
+              type="submit"
+              id="login-btn"
+              name="{% trans 'Log In' %}"
+              value="Sign In"
+              class="gradient-button btn btn-primary login-button"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="login-subtext-container">
+        <p class="login-signup-text">
+          Don't have an Account?
+          <a href="{% url 'account_signup' %}" title="Sign Up">Sign Up.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="popup-overlay phone-login-form">
+  <!--Creates the popup content-->
+  <div class="singin-singup-card border p-4 mt-5">
+    <div class="popup-content">
+      <p class="phone-login-title">Enter Your Mobile Number</p>
+      <div class="centering-wrap d-flex justify-content-center">
+        <form id="form_phone_login" onsubmit="return submit_phone_code(event);">
+          {% csrf_token %}
+          <div class="field-wrapper">
+            <span
+              ><div
+                class="brand-group-input d-flex align-items-center border rounded error"
+              >
+                <div class="icon px-1"><i class="fas fa-phone"></i></div>
+                <div class="flex-grow-1">
+                  <div role="group" class="form-group m-0">
+                    <label for="login-phone" class="d-block phone-login-label"
+                      >Phone</label
+                    >
+                    <div>
+                      <div role="group" class="input-group">
+                        <input
+                          id="login-phone"
+                          name="login"
+                          type="phone"
+                          autocomplete="tel-national"
+                          class="login-phone bg-transparent border-0 p-0 m-0 rounded-0 form-control"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div></div
+            ></span>
+          </div>
+          <small id="phone-login-error" class="text-danger hidden"></small>
+          <div class="f-item full-width">
+            <p class="phone-login-instructions">
+              You'll receive a digital code on this number
+            </p>
+            <input
+              type="submit"
+              id="login-phone-btn"
+              name="Phone Log In"
+              value="Next"
+              class="gradient-button btn btn-primary phone-login-button"
+            />
+          </div>
+        </form>
+
+        <form
+          id="form_phone_verify"
+          onsubmit="return submit_verify_phone_code(event);"
+          class="hidden"
+        >
+          {% csrf_token %}
+          <div class="field-wrapper">
+            <span
+              ><div
+                class="brand-group-input d-flex align-items-center border rounded error"
+              >
+                <div class="icon px-1"><i class="fas fa-phone"></i></div>
+                <div class="flex-grow-1">
+                  <div role="group" class="form-group m-0">
+                    <label for="login-phone" class="d-block phone-login-label"
+                      >Code</label
+                    >
+                    <div>
+                      <div role="group" class="input-group">
+                        <input
+                          id="login-phone"
+                          name="code"
+                          type="text"
+                          autocomplete="off"
+                          class="login-phone bg-transparent border-0 p-0 m-0 rounded-0 form-control"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div></div
+            ></span>
+          </div>
+          <small id="phone-verify-error" class="text-danger hidden"></small>
+          <div class="f-item full-width">
+            <input
+              type="submit"
+              id="login-phone-btn"
+              name="Phone Log In"
+              value="Next"
+              class="gradient-button btn btn-primary phone-login-button"
+            />
+          </div>
+        </form>
+      </div>
+  
+      <!--popup's close button-->
+      <button class="close close-btn topright">X</button>
+    </div>
+  </div>
+</div>
+
+<style>
+
+ .b{
+  border:1px solid #dee2e6;
+ }
+</style>
+
+
+{% endblock content %}
+ {% block javascript %}
+
+<script src="/static/plugins/intl-tel-input/js/intlTelInput.js"></script>
+<script>
+  const input = document.querySelector("#login-phone");
+  const intlTelInput = window.intlTelInput(input, {
+    preferredCountries: ["bd", "gb", "us", "in"],
+    utilsScript: "/static/plugins/intl-tel-input/js/utils.js",
+     initialCountry: "bd", 
+  });
+
+  function convertFormToJSON(form) {
+    const array = $(form).serializeArray(); // Encodes the set of form elements as an array of names and values.
+    const json = {};
+    $.each(array, function () {
+      json[this.name] = this.value || "";
+    });
+    return json;
+  }
+
+  function submit_phone_code(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (intlTelInput.isValidNumber()) {
+      let phone = intlTelInput.getNumber();
+      let form_data = convertFormToJSON($("#form_phone_login"));
+      form_data.login = phone;
+      form_data = JSON.stringify(form_data);
+
+      $.ajax({
+        url: '{% url "phone_code_ajax" %}',
+        type: "POST",
+        data: form_data,
+        contentType: "application/json",
+        success: function (result) {
+          $(".phone-login-title").text("Enter Your Verification Code");
+          $("#form_phone_login").hide();
+          $("#form_phone_verify").show();
+        },
+        error: function (result) {
+          console.log(result);
+        },
+      });
+    } else {
+      $("#phone-login-error").html("Invalid phone number").show();
+    }
+
+    return false;
+  }
+
+  function submit_verify_phone_code(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if ($("[name='code']").val()) {
+      $.ajax({
+        url: '{% url "verify_phone_code_ajax" %}',
+        type: "POST",
+        data: JSON.stringify(convertFormToJSON($("#form_phone_verify"))),
+        contentType: "application/json",
+        success: function (result) {
+          if (result && result.hasOwnProperty("success")) {
+            if (result.success === true) {
+              window.location = "{% url 'my_account' %}";
+            } else {
+              $("#phone-verify-error")
+                .html("Invalid verification number")
+                .show();
+            }
+          }
+        },
+        error: function (result) {
+          console.log(result);
+        },
+      });
+    } else {
+      $("#phone-verify-error").html("Invalid verification number").show();
+    }
+  }
+
+  $(document).ready(function () {
+    jQuery.fn.center = function (parent) {
+      if (parent) {
+        parent = this.parent();
+      } else {
+        parent = window;
+      }
+      this.css({
+        position: "absolute",
+        //"top": ((($(parent).height() - this.outerHeight()) / 2) + "px"),
+        left:
+          ($(parent).width() - this.outerWidth()) / 2 +
+          $(parent).scrollLeft() +
+          "px",
+      });
+      return this;
+    };
+  });
+
+  window.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      $(".popup-overlay, .popup-content").removeClass("active");
+    }
+  });
+
+  $(".login-with-mobile").click(function (e) {
+    e.preventDefault(); //this will prevent the default submit
+    $("#form_phone_verify").hide();
+    $("#form_phone_login").show();
+    $(".login-button").hide();
+    $(".login-subtext-container").hide();
+   $(".forgot-password-link").hide();
+    $(".h").hide();
+
+   $(".b").css({"border": "none"});
+
+   
+
+   
+
+    $(".popup-overlay").center(true);
+    $(".popup-overlay, .popup-content").addClass("active");
+
+   
+  });
+
+  //removes the "active" class to .popup and .popup-content when the "Close" button is clicked
+  $(".close").on("click", function () {
+    $(".popup-overlay, .popup-content").removeClass("active");
+    $(".login-button").show();
+    $(".login-subtext-container").show();
+   $(".forgot-password-link").show();
+     $(".h").show();
+
+   $(".b").css({"border": "1px solid #dee2e6;"});
+
+   
+  });
+</script>
+
+{% endblock javascript %}

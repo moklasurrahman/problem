@@ -1,0 +1,959 @@
+.fliate-details *{
+    box-sizing: border-box;
+    }
+    .custome-row{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .custome-col{
+        width: 50%;
+    }
+    .fliate-details {
+        border-top:1px solid #ced4da
+    }
+    .flit-booked-system {
+         border-right:1px solid #ced4da;
+         padding:20px;
+    }
+    .flit-booked-system h4{
+        font-size: 1.1428571429rem;
+        line-height: 22px;
+        font-weight: 600;
+        color: #1c3c6b;
+        text-align: center; 
+    }
+    .sticky-location {
+        padding:10px 20px;
+      }
+    .sticky-location p{
+        background:#5C0632;
+        display:inline-block;
+        color:white;
+        max-width:200px;
+        border-radius:5px;
+        border: 1px solid #5C0632;
+        padding: 4px 20px;
+        font-size:14px;
+        position:relative;
+    }
+    .sticky-location p:after{
+        position:absolute;
+        content:"";
+        bottom:-21px;
+        left:44%;
+        border-top:10px solid #5C0632;
+        border-lefT:10px solid transparent;
+        border-bottom:10px solid transparent;
+        border-right:10px solid transparent;
+    }
+    .flite-info .col-small {
+        width:20%;
+        text-align:left;
+    }
+    .flite-info .col-small.flite-class{
+    text-align: right;
+    }
+    .flite-info .col-big{
+        width:60%;
+        text-align:left;
+        padding:0 10px;
+    }
+    .flite-info .flite-name h5 {
+        font-size: 1rem;
+        line-height: 22px;
+        font-weight: 400;
+    }
+    .flite-info .custome-row {
+        margin-top:10px;
+        padding:10px 0;
+        border-bottom:1px solid #ced4da
+    }
+    .flite-class span{
+        font-size:14px !important;
+        line-height: 22px;
+        font-weight: 400 !important;
+        word-break: break-all;
+    }
+    .flite-img img{
+       width:100%;
+       object-fit:contain;
+    }
+    .flite-timing {
+        padding:10px 0;
+    }
+    .flite-timing  .col-custome{
+        width:33.33%;
+    }
+    .flite-timing  .flight-duration {
+        text-align:left
+    }
+    .flight-arrivale{
+        text-align:right;
+    }
+    .flite-time-up{
+        color: #1c3c6b;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 600;
+    }
+    
+    .flite-date-up,
+    .flite-location-up {
+        color: #5d6974;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+        margin:3px 0;
+    }
+    .arrow-pointer {
+        background-color: #5C0632;
+        height: 2px;
+        width: 100px;
+        position: relative;
+        margin: 0 18px;
+        display: inline-block;
+    }
+    .arrow-pointer:after{
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 8px 8px 0 0;
+        border-color: #5C0632 transparent transparent transparent;
+        right: -2px;
+        top: -6px;
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);
+    }
+    
+    .flite-timing .custome-row {
+        align-items:center
+    }
+    .flite-timing .flite-line-up p{
+        font-size:14px;
+        line-height:22px;
+        font-weight:400;
+        margin: 8px 0;
+        color: #5C0632;;
+    }
+    .flite-timing{
+        margin-bottom: 20px;
+    }
+    .fliate-details .layover,
+    .flite-review-sample .book-review .segments .stop .layover{
+        background-color: #ecdde4;
+        text-align: center;
+        padding: 8px 18px;
+        margin: 8px 0 20px;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #5c0632;
+    }
+    .flite-review-sample .book-review .segments .stop .layover span{
+        color: #5c0632;
+    }
+    .flite-review-sample .book-review .segments .dep-to-arr-airport.on .toggle-icon:after,
+    .flite-review-sample .baggage-fare-policy .head-line.on .toggle-icon:after,
+    .fight-demos.addon .toggle-icon:after{
+        transform: rotate(227deg);
+        margin-bottom:0
+      }  
+
+      .flite-review-title .toggle-icon[aria-expanded="true"]:after{
+          transform: rotate(227deg);
+          margin-bottom:0
+  } 
+
+    .flite-tab .flit-tabs-cta ul{
+        margin:0;
+        padding:0px;
+        list-style:none;
+        text-align:left;
+        border-bottom: 1px solid #bcc9dc;
+        margin-bottom: 8px;
+    }
+    .flite-tab .flit-tabs-cta ul li{
+        display:inline-block;
+    }
+    .flite-tab .flit-tabs-cta ul li a{
+        display: inline-block;
+        color: #5d6974;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+        padding: 8px 18px;
+        cursor: pointer;
+        border: 2px solid transparent;
+    }
+    .flit-tabs-cta ul li[aria-expanded="true"] a{
+        position:relative;
+        color:#5C0632;
+    }
+    .flit-tabs-cta ul li[aria-expanded="true"] a:after{
+        position:absolute;
+        content:"";
+        bottom:-3px;
+        left:15%;
+        right:15%;
+        background:#5C0632;
+        height:1px;
+    }
+    .flit-tabs-cta ul li[aria-expanded="true"] a:before{
+        position:absolute;
+        content:"";
+        border-top:5px solid #5C0632;
+        border-right:5px solid transparent;
+        border-left:5px solid transparent;
+        border-bottom:5px solid transparent;
+        bottom:-12px;
+        left:45%;
+    }
+    .flite-tab .baggage-table,
+    .flite-tab .fare-table{
+        padding:5px 15px;
+    }
+    .flite-tab .baggage-table table,
+    .flite-tab .fare-table table,
+    .baggage-fare-policy table{
+        width:100%;
+    }
+    .flite-tab .baggage-table table tr th,
+    .flite-tab .fare-table table tr th,
+    .baggage-fare-policy table tr th{
+        color:#5C0632;
+    }
+    .flite-tab .baggage-table table tr th,
+    .flite-tab .baggage-table table tr td,
+    .baggage-fare-policy .baggage-table table tr th,
+    .baggage-fare-policy .baggage-table table tr td{
+        font-size: 12px;
+        text-align: left;
+        width:33.33%;
+        padding:3px 0;
+        font-weight:400;
+        
+    }
+    .flite-tab .fare-table table tr th,
+    .flite-tab .fare-table table tr td,
+    .baggage-fare-policy table tr th,
+    .baggage-fare-policy table tr td{
+        font-size: 12px;
+        text-align: left;
+        width:25%;
+        padding:3px 0;
+        font-weight:400;
+    }
+    .flite-tab .baggage-table table tr td,
+    .flite-tab .fare-table table tr td{
+        color:#7f7f7f;
+    }
+    .flite-tab .baggage-table table tr th:nth-child(2),
+    .flite-tab .baggage-table table tr td:nth-child(2),
+    .flite-tab .fare-table table  tr th:nth-child(2),
+    .flite-tab .fare-table table tr td:nth-child(2),
+    .flite-tab .fare-table table  tr th:nth-child(3),
+    .flite-tab .fare-table table tr td:nth-child(3),
+    .baggage-fare-policy .fare-table table tr  th:nth-child(3),
+    .baggage-fare-policy .fare-table table tr td:nth-child(3),
+    .baggage-fare-policy .fare-table table tr  th:nth-child(2),
+    .baggage-fare-policy .fare-table table tr td:nth-child(2) ,
+    .baggage-fare-policy .baggage-table table tr th:nth-child(2),
+    .baggage-fare-policy .baggage-table table tr td:nth-child(2) {
+        text-align:center;
+    }
+    .flite-tab .baggage-table table tr th:last-child,
+    .flite-tab .baggage-table table tr td:last-child,
+    .flite-tab .fare-table table tr th:last-child,
+    .flite-tab .fare-table table tr td:last-child,
+    .baggage-fare-policy table tr th:last-child,
+    .baggage-fare-policy table tr td:last-child{
+        text-align:right
+    }
+    .flit-tab-content  .policy-table{
+        padding:10px;
+    }
+    .flit-tab-content  .policy-table .content-line hr{
+        display:none;
+    }
+    .flit-tab-content  .policy-table .title{
+        background-color: #ecdde4;
+        text-align: center;
+        padding: 8px 18px;
+        margin: 8px 0 20px;
+        font-size: 12px;
+        color: #5c0632;
+        font-weight:600;
+        text-transform:uppercase
+    }
+    
+    .flit-tab-content  .policy-table .content-line p{
+        text-align:left;
+        margin-bottom:4px;
+        font-size:12px;
+        font-weight:400;
+    }
+    .flit-tab-content  .policy-table .content-line p strong,
+    .flit-tab-content  .policy-table .content-line p span{
+        font-weight:500;
+        display:block;
+        border-bottom: 1px solid #ced4da;
+        padding:8px 0;
+        font-size:14px;
+        color: #5c0632;
+        margin-bottom: 10px;
+    }
+    .flit-tab-content  .policy-table .content-line p.notes{
+        font-weight:500;
+        display:block;
+        padding:8px 0;
+        font-size:14px;
+        color: #5c0632;
+        margin-bottom: 10px;
+    }
+    .flite-review-sample{
+        background:#ebf0f4;
+    }
+    .flite-review-sample .book-review .segments .toggle-icon,
+    .flite-review-sample .book-review .baggage-fare-policy .toggle-icon,
+    .flight-demos-detail .toggle-icon{
+        background: #ecdde4;
+    }
+    .flight-demos-detail .toggle-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 100px;
+        position: absolute;
+        cursor: pointer;
+        right: -2px;
+        bottom: -10px;
+    }
+    .flight-demos-detail .toggle-icon::after{
+        margin-left: 8px;
+        margin-bottom: 2px;
+        border: solid #5c0632;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        content: "";
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: transform .4s;
+        transition: transform .4s;
+    }
+    .flite-review-sample .book-review .segments .dep-to-arr-airport::after{
+        display: none;
+    }
+    .flite-review-sample .book-review .segments .toggle-icon:after, 
+    .flite-review-sample .book-review .baggage-fare-policy .toggle-icon:after{
+        margin-left: 8px;
+        margin-bottom: 2px;
+        border: solid #5c0632;
+        border-width: 0 2px 2px 0;
+    }
+    .flite-review-sample  .book-review .segments .dep-to-arr-airport span, 
+    .flite-review-sample  .book-review .baggage-fare-policy .head-line span{
+        font-size: 14px;
+        color: #5c0632;
+    }
+    .flite-review-sample  .book-review .segments .dep-to-arr-airport, 
+    .flite-review-sample  .book-review .baggage-fare-policy .head-line{
+     padding: 0 5px;
+    }
+    .flite-review-sample  .book-review .baggage-fare-policy {
+        margin-top: 15px;
+    }
+    .flite-travaler-form h4 {
+        margin-bottom:15px;
+        font-size:19px;
+        font-weight: 500;
+        margin-top: 25px;
+    }
+    .flite-travaler-form form#traveler_from {
+        -webkit-box-shadow: 0 4px 24px 0 rgba(34,41,47,.1);
+        box-shadow: 0 4px 24px 0 rgba(34,41,47,.1);
+        -webkit-transition: all .3s ease-in-out,background 0s,color 0s,border-color 0s;
+        border-radius: 0.428rem;
+    }
+    .flite-review-sample .flite-timing .flite-line-up{
+        text-align:center
+    }
+    .flite-review-sample .stops.can-collapsed.show-collapsed {
+        margin-top:15px
+    }  
+    .flite-review-sample .ui-widget.ui-widget-content{
+        border:1px solid transparent;
+        border-top: #bcc9dc 1px solid;
+    }
+    .flite-review-sample .baggage-fare-policy-wrapper.show-collapsed{
+        margin-top:15px;
+    }
+    .flite-review-sample  .ui-state-active,
+    .flite-review-sample  .ui-widget-content .ui-state-active,
+    .flite-review-sample .ui-widget-header .ui-state-active{
+      background: transparent;
+      border:1px solid transparent
+     }
+     .flite-review-sample  .ui-tabs .ui-tabs-nav li{
+       background: transparent;
+       margin: 0;
+       border:1px solid transparent;
+     }
+     .flite-review-sample  .ui-tabs .ui-tabs-nav li a{
+        font-size: 14px;
+     }
+     .flite-review-title {
+        padding:20px 15px;
+        display:flex;
+        justify-content:space-between;
+        border-bottom: 1px solid #bcc9dc;
+    }
+    .flite-review-title h3 {
+        font-size:18px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+    .flite-review-title h3 p {
+        background:#ecdde4;
+        font-size:12px;
+        padding:8px;
+        margin:0 10px 0 5px;
+    }
+    .flite-review-title  .toggle-icon{
+        width: 24px;
+        height: 24px;
+        background: #ecdde4;
+        border-radius: 100px;
+        position: relative;
+        cursor: pointer;
+    }
+    .flite-review-title  .toggle-icon:after{
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        margin-left: 8px;
+        content: "";
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: transform .4s;
+        transition: transform .4s;
+        margin-left: 8px;
+        margin-bottom: 2px;
+        border: solid #5c0632;
+        border-width: 0 2px 2px 0;
+    }
+    .flite-review-title h3 span{
+        font-size: 14px;
+        color: #5c0632;
+    }
+    .flite-travaler-form  .booking-form{
+        padding:0;
+    }
+    .flite-travaler-form-view {
+        padding: 20px 15px;
+        
+    }
+    .flite-travaler-form-view.custome-show{
+    display: block;
+    }
+    .flite-travaler-form-title {
+        margin-bottom: 15px;
+    }
+    .flite-travaler-form-title  p {
+        display:flex;
+        margin:10px 0 0;
+    }
+    .flite-travaler-form-title  p small{
+        margin-left:5px;
+        font-size:10px
+    }
+    .fileter-gender-radio {
+        margin: 10px 0 15px;
+    }
+    .fileter-gender-radio input[type="radio"] {
+        visibility: hidden; 
+        height: 0; 
+        width: 0; 
+      }
+      
+    .fileter-gender-radio   label {
+        display: inline-block;
+        border:1px solid  #5c0632;
+        text-align: center;
+        cursor: pointer;
+        padding: 8px 15px;
+        border-radius: 6px;
+        margin-right: 8px;
+        font-size:12px;
+        font-weight:400;
+        color: #5c0632;
+      }
+      .title-genter h6 {
+        font-size:13px;
+        font-weight:300
+    }
+    .fileter-gender-radio   label:last-of-type {
+       margin-right: 0;
+    }  
+    .fileter-gender-radio   input[type="radio"]:checked + label {
+        background: #5c0632;
+        color: #fff;
+    }
+    .filter-demo-name {
+        margin-top:10px;
+    }
+    .filter-demo-name .form-group{
+        margin-bottom:20px !important;
+        position: relative;
+    }
+    .filter-demo-name .custome-icone {    
+        display: inline-block;
+        padding: 3px;
+        margin-left: 8px;
+        content: "";
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: transform .4s;
+        transition: transform .4s;
+        margin-left: 8px;
+        margin-bottom: 2px;
+        border: solid #5c0632;
+        border-width: 0 2px 2px 0;
+        position:absolute;
+        right:20px;
+        bottom:12px;
+    }
+    .filter-demo-name .form-group .form-control,
+    .filter-demo-name .form-group .form-control:focus{
+        border-radius:5px;
+        height:35px;
+        font-size:12px;
+        font-weight:300;
+        text-transform:capitalize;
+        box-shadow:none;
+        outline:none;
+        border: 1px solid #ccc;
+    }
+    .filter-demo-name .form-group label{
+       font-size:12px;
+       font-weight:300;
+       margin-bottom:5px;
+    }
+    .flite-travaler-form-title.contact-filter {
+        margin-top: 18px;
+        padding-top: 20px;
+        border-top: 1px solid #ccc;
+    }
+    .flight-checkbox{
+        margin:10px 0 20px 0;   
+      }
+      .flight-checkbox .form-group {
+        display:flex;
+        align-items:center
+      }
+      .flight-checkbox .form-group input{
+        width:auto;
+        margin-right:5px;
+        
+      }
+      .flight-checkbox .form-group input:checked{
+        background-color: black !important;
+      }
+      .flight-checkbox .form-group label{
+        font-size:12px;
+        font-weight:400;
+        padding:0;
+        position:relative;
+      }
+      .flight-checkbox .form-group input:focus{
+        -webkit-appearance: checkbox;
+      }
+      .flight-checkbox .form-group input:checked{
+        opacity:0;
+      }
+      .flight-checkbox .form-group input:checked + label:before{
+        position:absolute;
+        content:"";
+        border:1px solid #5C0632;
+        height:15px;
+        width:15px;
+        left:-18px;
+        top:1px;
+        border-radius:2px;
+        background:#5C0632;
+        border-radius: 2px;
+      }
+      
+      .flight-checkbox .form-group  input:checked + label:after{
+        position: absolute;
+        content: "";
+        display: block;
+        top: 3px;
+        left: -13px;
+        width: 5px;
+        height: 8px;
+        border-style: solid;
+        border-color: white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+    .flite-review-sample  .book-review #next-step-no-login,
+    .flite-review-sample  .book-review #next-step,.sub-btn{
+        background: #5c0632;
+        color:white;
+        font-size:14px;
+        font-weight:500;
+
+    }
+
+    .flight-sign-review {
+        margin:20px 0;
+    }
+    .flight-sign-review  a{
+        margin-bottom: 15px;
+        font-size: 19px;
+        font-weight: 500;
+        text-transform:capitalize;
+        line-height: 30px;
+        color: #1c3c6b;
+    }
+    .flight-sign-review span {
+        font-size: 12px;
+        margin-left: 5px;
+        color: #7f7f7f;
+    }
+    .flight-cupeen-review {
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    }
+    .flight-cupeen-review a{
+        text-decoration:underline;
+        color: #5c0632;
+        font-size:15px;
+        font-weight: 500;
+    }
+    .right-sidebar-new {
+        /* / padding: 10px; / */
+        background-color: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    }
+    .right-sidebar-new  .fight-demos .row{
+        margin:0
+    }
+    .right-sidebar-new  .fight-demos .col-3,
+    .right-sidebar-new  .fight-demos .col-9{
+        padding:0 !important;
+    }
+    .flight-demos-img img{
+        width:100%;
+        height:75px;
+    }
+    .fight-demos {
+        cursor:pointer;
+        position:relative;
+        border-bottom:1px solid  #bcc9dc;
+        padding:10px 0;
+        margin-left:10px ;
+        margin-right:10px;
+      }
+      .flight-demos-detail {
+          padding-left: 10px;
+      }
+      .flight-demos-detail .flight-title-demo{
+          margin-bottom:8px;
+      }
+      .flight-demos-detail .flight-title-demo p{
+        display:inline-block;
+        font-size:11px;
+        margin-left:5px;  
+        color: #1c3c6b;
+      }
+      .flight-title-demo-content{
+          margin-top:10px;
+      }
+      .flight-title-demo-content h5{
+        font-size:14px;  
+        font-weight:500;
+        color: #1c3c6b;
+      }
+      .flight-title-demo-content span{
+          font-size:11px;
+          color:#4e5154;
+      }
+    .flight-summry {
+        padding: 15px 10px;
+        display: none;
+        border-bottom:1px solid  #bcc9dc;
+    }
+    .flight-summry.summry-custome{
+    display: block;
+    }
+    .flight-summry h5{
+        font-size:16px;
+        font-weight:500;
+        color: #1c3c6b;
+    }
+    .flight-summry table{
+        margin-top:10px;
+        width:100%;
+    }
+    .flight-subtotal {
+        padding:0 10px 10px;
+    }
+    .flight-subtotal table{
+        margin-top:15px;
+        width:100%;
+    }
+    .flight-summry table tr th,
+    .flight-summry table tr td,
+    .flight-subtotal table tr th,
+    .flight-subtotal table tr td{
+        padding:3px 0;
+        font-size:12px;
+        font-weight:300;
+    }
+    .flight-summry table tr td,
+    .flight-subtotal table tr td{
+        text-align:right;
+    }
+    .flight-summry table tr td b,
+    .flight-subtotal table tr td b{
+        font-weight:400 !important;
+    }
+    .flight-subtotal table tr td.green {
+        color: #29a992;
+    } 
+    .flight-subtotal table tr td b{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .flight-subtotal table tr td b img{
+        max-width:13px;
+        margin-right:5px;
+    }
+    span.flight-deal {
+       
+        padding:5px;
+        color:#5c0632;
+    }
+    .flight-main-totle {
+        padding: 10px;
+        background: #ecdde4;
+        margin-top:10px;
+    }
+    .flight-main-totle  table{
+        width:100%;
+    }
+    
+    .flight-main-totle tr:first-child th{
+        color:#5c0632;
+        font-size:14px;
+        font-weight:400
+    }
+    .flight-main-totle tr:first-child td{
+        color:#5c0632;
+        font-size:14px;
+        font-weight:400;
+    }
+    .flight-main-totle tr:first-child th small{
+        font-size:10px;
+    }
+    .flight-main-totle tr td{
+        text-align:right;
+    }
+    .flight-main-totle tr:nth-child(2) th,
+    .flight-main-totle tr:nth-child(2) td{
+        font-size:14px;
+        padding:3px 0;
+        color:#20bf6b;
+        font-weight:400
+    }
+    .login-form .f-item.checkbox.full-width {
+        display:flex;
+        align-items:center
+    }
+    .login-form .f-item.checkbox.full-width input,
+    .login-form .f-item.checkbox.full-width input:focus{
+        width:min-content;
+        -webkit-appearance: checkbox;
+        margin-right:5px;
+    }
+    .login-form input[type="submit"]{
+        margin-top:10px;
+        background:#5c0632;
+        color:white;
+        padding:8px 15px;
+        border:1px solid #5c0632;
+    }
+    .country-flage-custome{
+        position: relative;
+    }
+    .filter-demo-name .iti__country-list {
+        width:320px
+    }
+    @media screen and (max-width:1199px){
+    
+    }
+    @media screen and (max-width:991px){
+    .arrow-pointer{
+        width: 75px;
+    }
+    .flite-info .col-big {
+        width: 55%;
+    }
+    .flite-review-sample .three-fourth{
+        width:100%;
+        float:initial;
+    }
+    .flite-review-sample .book-review .segments {
+        flex-basis:100% !important;
+        width:100%;
+    }
+    .flite-review-sample .one-fourth {
+        width: 100%;
+        float:initial;
+    }
+    .flite-review-sample .book-review {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+    }
+    .flight-demos-img img{
+        object-fit: contain;
+    }
+    .flite-info .custome-row{
+        justify-content: space-between;
+    }
+    }
+    
+    @media screen and (max-width:767px){
+    .fliate-details .custome-col {
+     width: 100%;
+    }
+    .flite-tab {
+     padding:20px;       
+    }
+    .flit-tabs-cta {
+     border-top: 1px solid #bcc9dc;
+    }
+    .flite-tab {
+    padding:20px;   
+    }
+    .flit-tabs-cta {
+    border-top: 1px solid #bcc9dc;
+    }
+    .arrow-pointer {
+     width: 60px;
+    }
+    .flite-review-sample .flit-tabs-cta {
+        border-top:1px solid transparent;
+    }
+    }
+    @media screen and (max-width:575px){
+    .fliate-details .layover {
+       font-size: 12px;
+    }
+    
+    .flite-info .flite-name h5,
+    .flite-time-up,
+    .flite-date-up, 
+    .flite-location-up {
+        font-size: 14px;
+    }
+    .flite-tab .flit-tabs-cta ul li a {
+      padding: 8px 14px;
+    }
+    .arrow-pointer {
+      width: 50px;
+    }
+    .flite-timing .flite-line-up p {
+        font-size: 12px;
+    }
+    main.flite-review-sample .wrap{
+        max-width:100% !important;
+    }
+    .flite-review-title h3 span {
+        font-size: 10px;
+        color: #5c0632;
+    }
+    .flite-review-sample .ui-tabs .ui-tabs-panel{
+        padding:17px 0
+    }
+    .flite-review-title h3 {
+        font-size: 16px;
+    }
+    .flite-review-title h3 p {
+        font-size: 10px;
+        padding: 5px;
+    }
+    .flite-review-sample .flite-info .flite-name h5, 
+    .flite-review-sample .flite-time-up,
+    .flite-review-sample .flite-date-up,
+    .flite-review-sample  .flite-location-up,
+    .flite-review-sample  .flite-class span,
+    .flite-review-sample .book-review .segments .stop .layover{
+        font-size: 12px !important;
+     }
+     body .flite-review-sample .breadcrumbs li a{
+        border-right:none !important;
+        -webkit-box-shadow:none !important;
+        box-shadow: none !important;
+     }
+     body .flite-review-sample .breadcrumbs{
+        display:flex;
+        flex-wrap:wrap;
+        flex-direction:column;
+    }
+    body .flite-review-sample .breadcrumbs ul{
+        margin-bottom:0;
+    }
+    body .flite-review-sample .breadcrumbs ul li{
+        margin:5px 10px ;
+        float:none;
+        padding:00;
+        display:inline-block
+    }
+    body .flite-review-sample .breadcrumbs ul li a{
+        margin:0;
+        position:relative
+    }
+    body .flite-review-sample .breadcrumbs  ul li a:after{
+        position:absolute;
+        content:"|";
+        right:-10px;
+        font-size:13px;
+    }
+    body .flite-review-sample .breadcrumbs .top-right-nav{
+        text-align:right
+    }
+    body .flite-review-sample .breadcrumbs .top-right-nav li a:after{
+        display:none;
+    }
+    .filter-demo-name .iti__country-list {
+        width:280px
+    }
+    }
+    
+    
+    .flite-review-sample  .book-review #next-step-no-login,
+    .flite-review-sample  .book-review #next-step{
+        background: #5c0632;
+        color:white;
+        font-size:14px;
+        font-weight:500;
+        border: 2px solid #5c0632;
+    }
+    .flite-review-sample  .book-review #next-step-no-login:hover,
+    .flite-review-sample  .book-review #next-step:hover{
+      background-color: #fff;
+      color: #5c0632;  
+      border: 2px solid #5c0632;
+    }
+
+
+

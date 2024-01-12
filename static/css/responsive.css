@@ -1,0 +1,822 @@
+/*  RESPONSIVE CSS   */
+
+@media (max-width: 1199px) {
+  .navbar-nav {
+    height: 100%;
+    background: #ffffff;
+    border-radius: 7px;
+  }
+  .navbar-toggler {
+    margin-top: -9px !important;
+    padding: 0 !important;
+  }
+  .custom-nav-item {
+    display: block;
+  }
+  .navbar-toggler-icon img {
+    padding: 0;
+    width: 25px;
+  }
+  .navbar-brand {
+    width: 100px;
+  }
+  .navbar-nav-wrapper {
+    top: 0px;
+    left: 0;
+    position: absolute;
+    margin-top: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item .nav-link {
+    position: relative;
+    color: black;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(3) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f0ac";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(4) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f072";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(5) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f0b1";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(6) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f192";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(7) {
+    display: block;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(7) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f017";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(8) {
+    display: block;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(8) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f095";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(3) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(4) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(5) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(6) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(7) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    font-weight: 200;
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .nav-link {
+    color: black;
+  }
+
+  .header-right {
+    position: absolute;
+    right: 55px;
+    top: 7px;
+  }
+
+  .blogs-content-above-inner-second span {
+    font-size: 14px;
+    line-height: 46px;
+  }
+
+  .blogs-content-above-inner-second p {
+    font-size: 14px;
+  }
+
+  .blogs-content-above-inner-second h4 {
+    font-size: 16px;
+  }
+
+  .wraper-subscribe {
+    background-size: 100%;
+  }
+
+  .subs-main {
+    max-width: 40%;
+  }
+
+  .footer-brand img {
+    width: 78px;
+  }
+
+  .navbar-toggler-icon img {
+    width: 25px;
+  }
+
+  button.navbar-toggler {
+    padding-right: 0;
+    position: absolute;
+    right: 12px;
+    top: 19px;
+  }
+
+  .header-right .search {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    height: 100%;
+    background: #ffffff;
+  }
+  .custom-nav-item {
+    display: block;
+  }
+  .navbar-toggler {
+    margin-top: -9px !important;
+    padding: 0 !important;
+  }
+  .custom-nav-item {
+    display: block;
+  }
+  .navbar-toggler-icon img {
+    padding: 0;
+    width: 25px;
+  }
+  .navbar-brand {
+    width: 100px;
+  }
+  .navbar-nav-wrapper {
+    top: 0px;
+    left: 0;
+    position: absolute;
+    margin-top: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item .nav-link {
+    position: relative;
+    color: black;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(3) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f0ac";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(4) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f072";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(5) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f0b1";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(6) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f192";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(7) {
+    display: block;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(7) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f017";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(8) {
+    display: block;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(8) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f095";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(3) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(4) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(5) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(6) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(7) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    font-weight: 200;
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav {
+    height: 100%;
+    background: #ffffff;
+    border-radius: 7px;
+  }
+  .nav-link {
+    color: black;
+  }
+  .blogs-fare-section,
+  .blogs-fare-section-bottom {
+    flex-wrap: wrap;
+  }
+
+  .blogs-inner-section {
+    width: 1000%;
+  }
+
+  .blogs-inner-section-content img,
+  .inner-blog-section-content img,
+  .blogs-fare-section-bottom .blogs-inner-section-content img {
+    height: auto;
+  }
+
+  .blogs-fare-section-bottom .blogs-inner-section {
+    margin: 0 0 43px 0;
+  }
+
+  .btn-view-more a {
+    margin: 0;
+  }
+
+  .place-box-big {
+    margin-bottom: 15px;
+  }
+
+  .subs-main {
+    max-width: 54%;
+  }
+
+  .footer-nav,
+  .footertour {
+    margin: 20px 0;
+    display: inline-block;
+  }
+
+  .navbar-toggler-icon img {
+    width: 20px;
+    top: 5px;
+    position: relative;
+  }
+
+  button.navbar-toggler {
+    padding-right: 0;
+  }
+
+  .header-right {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-banner-text h1 {
+    font-size: 30px;
+    padding-bottom: 22px;
+  }
+  .custom-nav-item {
+    display: block;
+  }
+  .home-banner-text p {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  .home-banner-area {
+    /* height: 443px; */
+    height: 300px;
+  }
+  .navbar-toggler {
+    margin-top: -9px !important;
+    padding: 0 !important;
+  }
+  .custom-nav-item {
+    display: block;
+  }
+  .navbar-toggler-icon img {
+    padding: 0;
+    width: 25px;
+  }
+  .navbar-brand {
+    width: 100px;
+  }
+  .navbar-nav {
+    height: 100%;
+    background: #ffffff;
+    border-radius: 7px;
+  }
+  .navbar-nav-wrapper {
+    top: 0px;
+    left: 0;
+    position: absolute;
+    margin-top: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item .nav-link {
+    position: relative;
+    color: black;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(3) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f0ac";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(4) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f072";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(5) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f0b1";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(6) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f192";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(7) {
+    display: block;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(7) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f017";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(8) {
+    display: block;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(8) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f095";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(3) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(4) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(5) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(6) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(7) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    font-weight: 200;
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .nav-link {
+    color: black;
+  }
+  .banner-form,
+  .promotion,
+  .saftey-services,
+  .blogs-inner-section .inner-blogs-section {
+    flex-wrap: wrap;
+  }
+
+  .tab button p {
+    padding-top: 28px;
+  }
+
+  .tab button p:before {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    left: 0;
+    right: 0;
+    width: 30px;
+    height: 26px;
+    margin: auto;
+  }
+
+  .banner-input-form,
+  .travel-saftey-content p,
+  .saftey-services-box,
+  .find-fares,
+  .blogs-content-above-inner,
+  .inner-blog-section-content {
+    width: 100% !important;
+  }
+
+  .travel-saftey-content h1,
+  .blogs-great-fare-heading h1,
+  .wrappery-banner-text h1,
+  .title-place h2,
+  .subs-main h2 {
+    font-size: 18px;
+  }
+
+  .saftey-services {
+    gap: 0;
+  }
+
+  .blogs-inner-section-content-above-img {
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-top: -48px;
+    position: relative;
+  }
+
+  .blogs-button,
+  .btn-view-more {
+    margin: 0;
+  }
+
+  .blogs-button a {
+    display: inline-block;
+  }
+
+  .blogs-fare-section,
+  .blogs-fare-section-bottom,
+  .blogs-inner-section .inner-blogs-section {
+    gap: 0;
+  }
+
+  .wrappery-banner-text {
+    padding: 20px 20px 30px;
+  }
+
+  .wrappery-banner-text p {
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 29px;
+  }
+
+  .wrappery-banner-area {
+    height: 320px;
+  }
+
+  .title-place p {
+    font-size: 14px;
+  }
+
+  .content-place-together h4 {
+    font-size: 18px;
+    max-height: 55px;
+  }
+
+  .content-place-list {
+    width: 65%;
+    padding: 10px;
+  }
+
+  .place-box-list img {
+    height: 170px;
+  }
+
+  .travel-saftey-content h1 {
+    line-height: 36px;
+    padding-top: 15px;
+  }
+
+  .travel-saftey-content p {
+    font-size: 14px;
+    line-height: 25px;
+    padding-top: 15px;
+  }
+
+  .wraper-subscribe {
+    padding: 70% 0 30px;
+    background: linear-gradient(180deg, #0000 16%, #5c0632 37%),
+      url(../images/girl.jpg) no-repeat 0px top/ 100%;
+  }
+
+  .subs-main {
+    max-width: 100%;
+  }
+
+  .footer-nav,
+  .footertour {
+    margin: 7px 0;
+  }
+
+  .wraper-section .nav-tabs li.nav-item {
+    width: 100%;
+  }
+
+  .wraper-section .nav-link {
+    margin: auto;
+  }
+
+  .wraper-section .nav-tabs {
+    gap: 10px;
+  }
+
+  .banner-form .input-group,
+  .banner-form .flex-input {
+    width: 100% !important;
+  }
+
+  .flex-input .banner-input-form {
+    width: 33.333% !important;
+  }
+
+  .flex-input .banner-input-form:nth-child(4) {
+    width: 100% !important;
+  }
+
+  .flex-input {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-toggler {
+    margin-top: -9px !important;
+    padding: 0 !important;
+  }
+  .custom-nav-item {
+    display: block;
+  }
+  .navbar-toggler-icon img {
+    padding: 0;
+    width: 25px;
+  }
+  .navbar-brand {
+    width: 100px;
+  }
+  .navbar-nav-wrapper {
+    top: 0px;
+    position: absolute;
+    margin-top: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background: #8e2157;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item .nav-link {
+    position: relative;
+    color: black;
+    font-size: 15px;
+    margin-block: 3px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(2) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f0ac";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(3) .nav-link::before {
+    margin-top: 2px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f072";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(4) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f0b1";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(5) {
+    display: block;
+    border-bottom: 1px solid rgb(227, 227, 227);
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(5) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f192";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(6) {
+    border: none;
+    display: block;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(6) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f017";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(7) {
+    display: block;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(8) {
+    display: block;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(7) .nav-link::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f095";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(2) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(4) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(4) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(5) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    font-weight: 200;
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .navbar-nav-wrapper .navbar-nav .nav-item:nth-child(7) .nav-link::after {
+    position: absolute;
+    right: 0px;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f054";
+    font-weight: 200;
+    margin-right: 15px;
+    font-size: 18px;
+  }
+  .nav-link {
+    color: black;
+  }
+  .navbar-nav {
+    height: 100%;
+    background: #ffffff;
+    border-radius: 7px;
+  }
+  .header-area .nav-link {
+    font-size: 18px;
+  }
+  .header-area .nav-link.active {
+    font-size: 16px;
+  }
+
+  .navbar-brand img {
+    width: 85%;
+  }
+
+  .tab-section-home {
+    margin-top: -62px;
+  }
+
+  .tab-section-home .container {
+    padding: 0;
+  }
+
+  .tab {
+    border-radius: -1px;
+  }
+
+  .tab button {
+    padding: 8px 10px;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tab button span:before {
+    margin-right: 0;
+  }
+
+  .tab button:nth-child(1) p:before {
+    background-size: 24px;
+    background-position-x: center;
+    padding: 0;
+  }
+
+  .tab button:nth-child(2) p:before {
+    background-size: 18px;
+    background-position-x: center;
+    padding: 0;
+  }
+
+  .tab button:nth-child(3) p:before {
+    background-size: 16px;
+    background-position-x: center;
+    padding: 0;
+  }
+}

@@ -1,0 +1,58 @@
+{% extends "layouts/base-new.html" %}
+{% load i18n %}
+
+{% block header %}
+{% include "layouts/header.html" %}
+{% endblock header %}
+
+{% block head_style %}
+{% endblock head_style %}
+
+{% block content %}
+
+<main class="main">
+  <div class="centering-wrap d-flex justify-content-center">
+      <div class="verify-phone-form">
+          <header class="s-title">
+            <h2>Verify your Phone Number</h2>
+          </header>
+            <form id="verify_form" method="post" action="./">
+                {% csrf_token %}
+                <div>
+                    {{form.non_field_errors}}
+                </div>
+                <div class="field-wrapper">
+                    <span><div class="brand-group-input d-flex align-items-center border rounded error">
+                        <div class="icon px-1"><i class="fas fa-user-shield"></i></div>
+                        <div class="flex-grow-1"><div role="group" class="form-group m-0">
+                            <label for="login" class="d-block">Verification code</label><div>
+                            <div role="group" class="input-group"><input id="code" name="code" type="text" autocomplete="off" class="bg-transparent border-0 p-0 m-0 rounded-0 form-control"></div></div></div></div></div>
+                            {% if form.code.errors %}<small id="code-error" class="text-danger">{{ form.code.errors }}</small>{% endif %}
+                        {% if resent %}<small class="text-success">Verification code has been resent</small>{% endif %}
+                        <div id="resend-code" class="hidden"><a href="#" onclick="resendCode()">Resend Code</a></div>
+                    </span>
+                </div>
+                <div class="f-item checkbox full-width">
+                    <input type="submit" id="verify" name="verify" value="Verify" class="gradient-button btn btn-primary login-button" />
+                </div>
+           </form>
+      </div>
+  </div>
+</main>
+{% endblock content %}
+
+{% block javascript %}
+<script>
+    function resendCode() {
+        $('<input name="resend_code" value="1">').attr("type", "hidden").appendTo('#verify_form');
+        $('#verify_form').submit();
+    }
+
+    $(document ).ready(function() {
+      if ($('#code-error').length > 0 && $('#code-error').text() == 'Verification code does not match') {
+          $('#resend-code').show();
+      }
+    });
+</script>
+
+{% endblock javascript %}

@@ -1,0 +1,278 @@
+{% extends "layouts/base-new.html" %}
+
+{% load static %}
+{% load custom_func %}
+{% load i18n %}
+
+{% block style %}
+<link href="{% static 'css/flights.css' %}" rel="stylesheet" />
+<link href="{% static 'css/custome.css' %}" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" />
+<link rel="stylesheet" href="/static/plugins/intl-tel-input/css/intlTelInput.css">
+
+{% endblock style %}
+
+{% block header %}
+{% include "layouts/header.html" %}
+{% endblock header %}
+
+{% block content %}
+
+<style>
+
+    .tr{
+        padding: 20px 0px !important;
+    }
+    .profile_item{
+        background: white;
+        padding: 15px;
+    }
+    .profile{
+        display:flex;
+        align-items: center; 
+        justify-content: space-between;
+        gap:35px;
+    }
+    .img{
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+    }
+
+    .edit{
+        display:flex;
+        gap: 10px;
+        align-items: center; 
+        font-size: 20px;
+        cursor:pointer;
+        font-weight: 600;
+    }
+    .edit:hover{
+        color: #8C094C ;
+    }
+
+    .profile_manu{
+        padding-top: 20px;
+        display:flex;
+        flex-direction: column;
+        gap: 30px
+    }
+    .profile_manu .item{
+        display:flex;
+        align-items: center; 
+        gap: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        font-weight: 400;
+
+    }
+    .profile_manu .item:hover{
+        color: #8C094C ;
+    }
+    .logout{
+        font-size: 15px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+    .logout:hover{
+        color: #8C094C;
+    }
+
+     /*  -----------------------right side-------------------------------*/
+
+     .right-top{
+        background: white;
+        padding: 20px;
+        margin-bottom: 30px;
+     }
+
+     .right-title{
+        display:flex;
+        align-items: center; 
+        justify-content: space-between;
+        padding-bottom: 30px;
+     }
+     .add{
+        padding: 20px 0px; 
+        cursor: pointer;
+        color: blue;
+     }
+     .add p{
+        display:flex;
+        align-items: center; 
+        gap: 5px
+     }
+
+
+
+    
+</style>
+
+<main class="main bg-secondary" style="--bs-bg-opacity: .1;">
+    <div class="wrap" style="padding-top:30px; padding-bottom:50px">
+        <div class="row">
+            
+            <div class="left col-md-3">
+                <div class="profile_item">
+                    <div class="profile">
+                        <img class="img" src="https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                         <p class="edit"><i class="fa-solid fa-pen-to-square icon"></i><span class="edit">Edit</span></p>
+                    </div>
+                    
+                    <div class="profile_manu">
+                        <p class="item">
+                            <i class="fa-solid fa-user"></i>
+                            <span>Personal Info</span>
+                        </p>
+                        <p class="item">
+                            <i class="fa-regular fa-people-simple"></i>
+                            <span>Travelers</span>
+                        </p>
+                        <p class="item">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Settings</span>
+                        </p>
+                        <p class="logout">
+                            <span>Log Out</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+{% comment %} -------------------------Profile------------------------------- {% endcomment %}
+            <div class="right col-md-9">
+               <div class="right-top">
+                    <div class="right-title">
+                        <div>
+                            <h3>Profile</h3>
+                            <p>Basic info, for a faster booking experience</p>
+                        </div>
+                        <div>
+                            <p class="edit"><i class="fa-solid fa-pen-to-square icon"></i><span class="edit">Edit</span></p>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <table class="table">
+                            <tbody>
+                              <tr>
+                                <th class="tr" scope="row">Name:</th>
+                                <td class="tr">Larry</td>
+                              </tr>
+                              <tr>
+                                <th class="tr" scope="row"> Gender:</th>
+                                <td class="tr">Male</td>
+                              </tr>
+
+                              <tr>
+                                <th class="tr" scope="row">Present Address:</th>
+                                <td class="tr">N/A</td>
+                              </tr>
+                              <tr>
+                                <th class="tr" scope="row"> Permanent Address:</th>
+                                <td class="tr">N/A</td>
+                              </tr>
+                              <tr>
+                                <th class="tr" scope="row"> Marital Status:</th>
+                                <td class="tr">N/A</td>
+                              </tr>
+                              <tr>
+                                <th class="tr" scope="row"> Date of Birth	:</th>
+                                <td class="tr">N/A</td>
+                              </tr>
+                              <tr>
+                                <th class="tr" scope="row"> Passport Country:</th>
+                                <td class="tr">N/A</td>
+                              </tr>
+                              <tr>
+                                <th class="tr" scope="row"> Passport Number:</th>
+                                <td class="tr">N/A</td>
+                              </tr>
+                              <tr>
+                                <th class="tr" scope="row"> Passport Expiry Date:</th>
+                                <td class="tr">N/A</td>
+                              </tr>
+                              <tr>
+                                <th class="tr" scope="row"> National ID:</th>
+                                <td class="tr">N/A</td>
+                              </tr>
+                              <tr>
+                                <th class="tr" scope="row"> Nationality	:</th>
+                                <td class="tr">N/A</td>
+                              </tr>
+                              <tr>
+                                <th class="tr" scope="row"> Emergency Contact:</th>
+                                <td class="tr">N/A</td>
+                              </tr>
+                              <tr>
+                                <th class="tr" scope="row"> Religion:</th>
+                                <td class="tr">N/A</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                       </div>
+        
+
+
+               </div>
+{% comment %} -------------------------Traveler Info------------------------------ {% endcomment %}
+              <div class="right-top">
+                <div class="right-title">
+                    <div>
+                        <h3>Traveler Info</h3>
+                        <p>You have 1 traveller</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="pb-5">taj taj</span>
+                    <p>moklasur55555@gmail.com</p>
+                </div>
+
+                <div class="add">
+                  <p><i class="fa-solid fa-plus"></i><a href="#">Add Traveler?</a></p>
+                </div>
+            </div>
+
+ {% comment %} -------------------------------Settings-------------------------------------- {% endcomment %}
+                <div class="right-top">
+                    <div class="right-title">
+                        <div>
+                            <h3>Settings</h3>
+                            <p>Manage your email address, mobile number and password                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <table class="table">
+                                <tbody>
+                                  <tr>
+                                    <th class="tr" scope="row">Email:</th>
+                                    <td class="tr">moklasur55555@gmail.com</td>
+                                  </tr>
+                                  <tr>
+                                    <th class="tr" scope="row"> Phone:</th>
+                                    <td class="tr">8801732083499</td>
+                                  </tr>
+    
+                                  <tr>
+                                    <th class="tr" scope="row">Password:</th>
+                                    <td class="tr">
+                                        <a href="#">Change Password?</a>
+
+                                    </td>
+                                  </tr>
+                                 
+                                </tbody>
+                              </table>
+                           </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+{% endblock content %}

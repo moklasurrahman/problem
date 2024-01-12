@@ -1,0 +1,256 @@
+{% extends "layouts/base-new.html" %}
+{% load i18n %}
+
+{% block header %}
+{% include "layouts/header.html" %}
+{% endblock header %}
+
+{% block head_style %}
+<link rel="stylesheet" href="/static/plugins/intl-tel-input/css/intlTelInput.css">
+{% endblock head_style %}
+
+{% block content %}
+<main class="main">
+  <div class="centering-wrap d-flex justify-content-center">
+    <div class="signup-form">
+      <div class="singin-singup-card border p-4 mt-5">
+        <form
+          id="form_signup"
+          action="{% url 'account_signup' %}"
+          method="post"
+        >
+          {% csrf_token %}
+          <div>{{form.non_field_errors}}</div>
+          <div class="field-wrapper">
+            <header class="s-title my-4">
+              <h4>Sign Up</h4>
+              <p class="signup-pg-label p-0">
+                Create an account to easily use uralholidays.com services.
+              </p>
+            </header>
+            <span>
+              <div
+                class="brand-group-input d-flex align-items-center border rounded error"
+              >
+                <div class="icon px-1"><i class="fas fa-envelope"></i></div>
+                <div class="flex-grow-1">
+                  <div role="group" class="form-group m-0">
+                    <label for="login" class="d-block">Email</label>
+                    <div>
+                      <div role="group" class="input-group">
+                        <input
+                          id="login"
+                          name="email"
+                          type="email"
+                          placeholder="someone@example.com"
+                          autocomplete="email"
+                          class="bg-transparent border-0 p-0 m-0 rounded-0 form-control"
+                          {%
+                          if
+                          form.email.value
+                          %}value="{{ form.email.value }}"
+                          {%
+                          endif
+                          %}
+                        /><!---->
+                        <div
+                          data-lastpass-icon-root="true"
+                          style="
+                            position: relative !important;
+                            height: 0px !important;
+                            width: 0px !important;
+                            float: left !important;
+                          "
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% if form.email.errors %}<small class="text-danger"
+                >{{ form.email.errors }}</small
+              >{% endif %}
+            </span>
+          </div>
+          <div class="field-wrapper">
+            <span
+              ><div
+                class="brand-group-input d-flex align-items-center border rounded error"
+              >
+                <div class="icon px-1"><i class="fas fa-phone"></i></div>
+                <div class="flex-grow-1">
+                  <div role="group" class="form-group m-0">
+                    <label for="login" class="d-block">Mobile</label>
+                    <div>
+                      <div role="group" class="input-group">
+                        <input
+                          id="id_username"
+                          name="username"
+                          type="phone"
+                          placeholder="1XXX XXXXXX"
+                          autocomplete="tel-national"
+                          class="bg-transparent border-0 p-0 m-0 rounded-0 form-control signup-phone"
+                          {%
+                          if
+                          form.username.value
+                          %}value="{{ form.username.value }}"
+                          {%
+                          endif
+                          %}
+                        /><!---->
+                        <div
+                          data-lastpass-icon-root="true"
+                          style="
+                            position: relative !important;
+                            height: 0px !important;
+                            width: 0px !important;
+                            float: left !important;
+                          "
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% if form.username.errors %}<small class="text-danger"
+                >{{ form.username.errors }}</small
+              >{% endif %}
+              <small class="text-danger"
+                ><ul id="phoneError" class="errorlist"></ul
+              ></small>
+            </span>
+          </div>
+          <div class="field-wrapper">
+            <span
+              ><div
+                class="brand-group-input d-flex align-items-center border rounded error"
+              >
+                <div class="icon px-1"><i class="fas fa-lock"></i></div>
+                <div class="flex-grow-1">
+                  <div role="group" class="form-group m-0">
+                    <label for="password" class="d-block">Password</label>
+                    <div>
+                      <div role="group" class="input-group">
+                        <input
+                          id="password"
+                          name="password1"
+                          type="password"
+                          placeholder="somePassword"
+                          class="bg-transparent border-0 p-0 m-0 rounded-0 form-control"
+                        /><!---->
+                        <div
+                          data-lastpass-icon-root="true"
+                          style="
+                            position: relative !important;
+                            height: 0px !important;
+                            width: 0px !important;
+                            float: left !important;
+                          "
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% if form.password1.errors %}<small class="text-danger"
+                >{{ form.password1.errors }}</small
+              >{% endif %}
+            </span>
+          </div>
+          {% comment %}
+          <div class="f-item full-width hide-phone">
+            <input
+              type="text"
+              name="username"
+              placeholder="Phone"
+              autocomplete="phone"
+              minlength="1"
+              maxlength="150"
+              required=""
+              id="id_username"
+            />
+            <!-- {{ form.username }} -->
+            {{ form.username.errors }}
+            <ul id="phoneError" class="errorlist"></ul>
+          </div>
+          <div class="f-item full-width">
+            <label for="{{ form.email.id_for_label }}"
+              >{{ form.email.label }}</label
+            >
+            {{ form.email }} {{ form.email.errors }}
+          </div>
+          <div class="f-item full-width">
+            <label for="{{ form.password1.id_for_label }}"
+              >{{ form.password1.label }}</label
+            >
+            {{ form.password1 }} {{ form.password1.errors }}
+          </div>
+          <div class="f-item full-width">
+            <label for="{{ form.password2.id_for_label }}"
+              >{{ form.password2.label }}</label
+            >
+            {{ form.password2 }} {{ form.password2.errors }}
+          </div>
+          {% endcomment %} {% if redirect_field_value %}
+          <input
+            type="hidden"
+            name="{{ redirect_field_name }}"
+            value="{{ redirect_field_value }}"
+          />
+          {% endif %}
+          <!-- <div class="f-item checkbox full-width">
+                <input type="checkbox" id="newsletter_s" name="newsletter" />
+                <label for="newsletter_s">Tell me about inspiring travel news, and exclusive discounts!</label>
+              </div> -->
+          <div class="f-item checkbox full-width">
+            <p class="signup-pg-label">
+              <input
+                type="checkbox"
+                id="agree_terms"
+                name="agree_terms"
+                class="form-check-input signup-agree-terms"
+              />By creating an account you agree to our
+              <a href="{% url 'terms_conditions' %}">Terms & Conditions</a> and
+              <a href="{% url 'privacy_policy' %}">Privacy Policy</a>.
+            </p>
+            {% if form.agree_terms.errors %}<small class="text-danger"
+              >{{ form.agree_terms.errors }}</small
+            >{% endif %}
+            <input
+              type="submit"
+              id="register"
+              name="{% trans 'Sign Up' %}"
+              value="Sign Up"
+              class="gradient-button btn btn-primary login-button"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock content %} {% block javascript %}
+<script src="/static/plugins/intl-tel-input/js/intlTelInput.js"></script>
+<script>
+  const input = document.querySelector("#id_username");
+  const intlTelInput = window.intlTelInput(input, {
+    preferredCountries: ["bd", "gb", "us", "in"],
+    utilsScript: "/static/plugins/intl-tel-input/js/utils.js",
+  });
+
+  $("#form_signup").submit(function (e) {
+    event.preventDefault(); //this will prevent the default submit
+    // your code here
+    $("#phoneError").empty();
+    var isValid = intlTelInput.isValidNumber();
+    if (!isValid) {
+      $("#phoneError").append("<li>Phone number is invalid.</li>");
+      return false;
+    }
+    $("#id_username").val(intlTelInput.getNumber());
+    $(this).unbind("submit").submit();
+  });
+</script>
+
+{% endblock javascript %}

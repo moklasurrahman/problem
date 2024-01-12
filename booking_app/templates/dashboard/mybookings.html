@@ -1,0 +1,118 @@
+{% extends "layouts/base.html" %}
+
+
+{% load static %}
+{% block header %}
+{% include "layouts/header.html" %}
+{% endblock header %}
+
+{% load i18n %}
+{% load static %}
+{% load custom_func %}
+
+{% block style %}
+<link href="{% static 'css/flights.css' %}" rel="stylesheet" />
+<link href="{% static 'css/custome.css' %}" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" />
+<link rel="stylesheet" href="/static/plugins/intl-tel-input/css/intlTelInput.css">
+{% endblock style %}
+
+{% block content %}
+
+
+<style>
+  .title{
+    text-align: center;
+    padding: 20px 0px;
+  }
+  .item-d{
+    height: 100%%;
+    background: #f8f9fa;
+    color: #5c0632;
+    padding: 20px;
+    border: 1px #801c4f solid;
+    border-radius: 10px;
+
+}
+
+
+</style>
+
+
+
+<main class="main">
+  <div class="wrap">
+      <div class="container mt-3">
+
+        <h2 class="title">My order List:</h2>
+        <div class="row p-2">
+        <div class="col-sm-1 col-md-12 p-2">
+          
+        <div class="item-d d-flex gap-3">
+          
+        <div class="w-50">
+          <h2 class="pb-3">Order Informations: </h2>
+          {% for order in order_details %}
+
+          <h6 class="pb-3">Flight Informations: </h6>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Flight Offer:</th>:
+                <th scope="col">Total Amount:</th>
+                <th scope="col">Price:</th>
+                <th scope="col">Currency:</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{order.flight_offer.name}}</th>
+                <td>{{order.amount}}</td>
+                <td>{{order.flight_offer.price}}</td>
+                <td>{{order.flight_offer.currency}}</td>
+              </tr>
+            </tbody>
+          </table>
+       
+          <div class="w-50"> 
+            <h6 class="pb-3">Travelers parsonal Informations: </h6>
+            {% for traveler in traveler_info %}
+            <p>Bookin Id: {{traveler.index }}</p>
+            <p>First Name: {{traveler.first_name }}</p>
+            <p> {{traveler.last_name }}</p>
+            <p> {{traveler.middle_name}}</p>
+            <p> {{traveler.gender }}</p>
+            <p> {{traveler.date_of_birth }}</p>
+            <p> {{traveler.email_address }}</p>
+            <p> {{traveler.phone }}</p>
+            <p> {{traveler.passport_number }}</p>
+            <p> {{traveler.passport_expiry_date }}</p>
+            <p> {{traveler.type }}</p>
+            <p> {{traveler.country }}</p>
+            <p> {{traveler.passport_issue_date }}</p>
+            <p> {{traveler.passport_country }}</p>
+            <p> Issue Date: {{traveler.created_on }}</p>
+          {% endfor %}
+          </div>
+<div style="background:red; padding:30px;">
+<br/><br/><br/><br/>
+</div>
+          {% endfor %}
+         </div>
+        
+          
+             
+            </div>
+          </div>
+        
+        </div>
+        
+        
+
+      </div>
+  </div>
+
+</main>
+
+{% endblock %}
