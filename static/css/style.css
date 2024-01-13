@@ -2046,6 +2046,7 @@ input:focus {
 }
 
 @media (max-width: 767px) {
+
   .tab-section-home {
     margin-bottom: 45px;
   }
@@ -2068,7 +2069,7 @@ input:focus {
     bottom: 0;
   }
   .promotion-content-second{
-    margin-top: 40px;
+    margin-top: 40px !important;
   }
   .promotion-content {
     padding: 25px;
