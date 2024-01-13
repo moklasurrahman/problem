@@ -265,7 +265,7 @@ def book_checkout(request, flight_offer_id,travelers_id):
     #     # instance = get_object_or_404(Traveler, pk=traveler_id)
     #     pass
     # else:
-    instance = get_object_or_404(Traveler, pk=flight_offer_id)
+    instance = get_object_or_404(Traveler, pk=travelers_id)
 
     if request.method == 'POST':
         form = TravelerEditForm(request.POST, instance=instance)
