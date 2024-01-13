@@ -8,9 +8,8 @@ urlpatterns = [
     path('book-review/<str:flight>/', views.book_review, name="book_review"),
    
     path('book/<str:flight>/', views.book_travelers, name="book_travelers"),
-    
-    path('book/checkout/<int:flight_offer_id>/', views.book_checkout, name="book_checkout"),
-    # path('book/checkouts/<int:flight_offer_id>/<int:traveler_id>/', views.book_checkout, name="book_checkouts"),
+    # path('book/checkout/<int:flight_offer_id>/', views.book_checkout, name="book_checkout"),
+    path('book/checkout/<int:flight_offer_id>/<int:travelers_id>/', views.book_checkout, name="book_checkout"),
     
     path('book/create-checkout-session/<int:flight_offer_id>/', views.create_checkout_session, name="flight_create_checkout"), # login required
     path('book/payment/success', views.payment_success, name="flight_payment_success"),
