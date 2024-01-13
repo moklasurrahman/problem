@@ -237,7 +237,10 @@ def book_travelers(request, flight):
 
 
 
-def book_checkout(request, flight_offer_id, traveler_id=None):
+def book_checkout(request, flight_offer_id,travelers_id):
+
+    flight_offer_id=flight_offer_id
+    travelers_id = travelers_id
     if request.user.is_authenticated:
         flight_offer = get_object_or_404(FlightOffer, pk=flight_offer_id, user=request.user)
     else:
@@ -297,6 +300,7 @@ def book_checkout(request, flight_offer_id, traveler_id=None):
 
     return render(request, 'air/book_checkout.html', {
         "flight_offer_id": flight_offer_id,
+        "travelers_id":travelers_id,
         "flight": flight,
         "offer": offer,
         "stripe_publishable_key": settings.STRIPE_PUBLISHABLE_KEY,
@@ -1197,9 +1201,10 @@ def test_book_travelers(request, flight):
                     # index=index,
                     date_of_birth=date_of_birth
                 )
+
+                return redirect('book_checkout', flight_offer_id=flight_offer.id, travelers_id=travelers.id)
                 
-               
-                return redirect('book_checkout', flight_offer.id)
+            
            
         except:
             messages.error(request,"field missing")
@@ -1267,13 +1272,10 @@ def mybookings(request):
         "coupon_code": coupon_code,
         "discounted_value": discounted_value,
         'discount': discount,
-
-         "flight_offer": flight_offer,
+        "flight_offer": flight_offer,
         "traveler_info": traveler_info,
         "order_details": order_details,
-       
         
     })
 
     
-

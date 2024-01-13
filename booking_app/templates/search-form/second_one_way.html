@@ -1,0 +1,117 @@
+{% load static %}
+<form method="post" action="/air/flights" class="one-way-form">
+  <div class="banner-form">
+    {% csrf_token %}
+    {{ second_form.sort_by }}
+    <div class="input-group select-airports">
+      <a class="swap-icon"><img src="{% static 'images/swap-icon.png' %}" alt=""></a>
+      {{ second_form.departure_at }}
+      {{ second_form.arrival_at }}
+    </div>
+    <div class="flex-input">
+      <div class="banner-form-trip">
+        <span>Trip</span>
+        {{ second_form.trip_type }}
+      </div>
+      <div class="banner-form-datepicker-area-duo">
+        <div class="left">
+          <span>Depart</span>
+          {{ second_form.departure_date }}
+        </div>
+        <div class="md">-</div>
+        <div class="right">
+          <span>Return</span>
+          {{ second_form.return_date }}
+        </div>
+      </div>
+      
+      <div class="banner-form-Passengers_class-area">
+        <span>Passenger / Class</span>
+        <input
+            type="text"
+            id="id_passenger_class"
+            class="banner-form-Passengers_class-input"
+            value="1 Passenger, Economy"
+        >
+        <div class="passenger-class-panel">
+          <div>Passengers</div>
+          <div class="passenger-class-field"><span>Adults(12+ years)</span>{{ second_form.adults }}</div>
+          <div class="passenger-class-field"><span>Child(2-11 years)</span>{{ second_form.child }}</div>
+          <div class="passenger-class-field"><span>Infant(Under 2 years)</span>{{ second_form.infant }}</div>
+          <div>Class</div>
+          <div>{{ second_form.flight_class }}</div>
+          <div class="confirm-button" id="confirm-passenger-class">
+            Confirm
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="promotion">
+    <div class="promo">
+      <a onclick="promoDetector()" id="promo_button">+ Add promo code</a>
+      <div class="form-floating promo-container">
+        <input type="text" name='promo_code' class="form-control" id="promo" placeholder="Enter promo code">
+        <label for="promo">Enter promo code</label>
+      </div>
+
+    </div>
+    <div class="form-button">
+    
+      <button id="searchFlightsBtn" type="submit">
+      Search flights <img src="{% static 'images/buttonflight.png' %}" alt="">
+    </button>
+    </div>
+  </div>
+</form>
+
+
+
+<script>
+
+
+jQuery('<div id="icon-id" class="passenger-class-field-nav"><div class="passenger-class-field-button passenger-class-field-up">+</div></div>').insertBefore('.passenger-class-field input');
+jQuery('<div id="icon-id-in" class="passenger-class-field-nav"><div class="passenger-class-field-button passenger-class-field-down">-</div></div>').insertAfter('.passenger-class-field input');
+jQuery('.passenger-class-field').each(function() {
+  var spinner = jQuery(this),
+    input = spinner.find('input[type="number"]'),
+    btnUp = spinner.find('.passenger-class-field-up'),
+    btnDown = spinner.find('.passenger-class-field-down'),
+    min = input.attr('min'),
+    max = input.attr('max');
+
+
+  btnUp.click(function() {
+    var oldValue = parseFloat(input.val());
+    if (oldValue >= max) {
+      var newVal = oldValue;
+    } else {
+      var newVal = oldValue + 1;
+    }
+    spinner.find("input").val(newVal);
+    spinner.find("input").trigger("change");
+  });
+
+
+  btnDown.click(function() {
+    var oldValue = parseFloat(input.val());
+    if (oldValue <= min) {
+      var newVal = oldValue;
+    } else {
+      var newVal = oldValue - 1;
+    }
+    spinner.find("input").val(newVal);
+    spinner.find("input").trigger("change");
+  });
+
+
+ 
+});
+
+
+
+
+</script>
