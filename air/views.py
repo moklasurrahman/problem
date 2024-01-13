@@ -1224,55 +1224,15 @@ def mybookings(request):
         
         order_details = OrderDetail.objects.filter(user=request.user)
         traveler_info = Traveler.objects.filter(flight_offer__order__in=order_details)
-        flight_offer = FlightOffer.objects.filter(user=request.user, flight_offer__in=order_details)
+        # flight_offer = FlightOffer.objects.filter(user=request.user, flight_offer__in=order_details)
 
-        print(flight_offer)
+        # print(flight_offer)
     else:
         return render("home_page")
     
 
-    flight = flight_offer.flight
-
-    try:
-        flight_price_confirmed = amadeus.shopping.flight_offers.pricing.post(flight).data["flightOffers"]
-    except ResponseError as error:
-        messages.add_message(request, messages.ERROR, error.response.body)
-        return redirect('home_page')
-    
-
-
-
-    offer = Flight(flight).construct_flights()
-    coupon_code = ''
-    discounted_value = offer['price']
-    discount = None
-    promo_code = request.GET.get('promo_code', None)
-    print("my promo code is : ", promo_code)
-    print("--------------------")
-    print(promo_code)
-    if promo_code and request.user.is_authenticated:
-        status = validate_coupon(coupon_code=promo_code, user=request.user)
-        if status['valid']:
-            coupon = Coupon.objects.get(code=promo_code)
-            coupon_code = coupon.code
-            initial_value = float(offer['price'])
-            discounted_value = "%.2f" % coupon.get_discounted_value(initial_value)
-            discount = coupon.get_discount()
-            # if discount['is_percentage']:
-            #     discount_amount = (initial_value * discount['value']) / 100
-            # else:
-            #     discount_amount =  discount['value']
-
     return render(request, 'dashboard/mybookings.html', {
-      
-        "flight": flight,
-        "offer": offer,
-        "stripe_publishable_key": settings.STRIPE_PUBLISHABLE_KEY,
-        "travelers": flight_offer.travelers.all(),
-        "coupon_code": coupon_code,
-        "discounted_value": discounted_value,
-        'discount': discount,
-        "flight_offer": flight_offer,
+        # "flight_offer": flight_offer,
         "traveler_info": traveler_info,
         "order_details": order_details,
         
