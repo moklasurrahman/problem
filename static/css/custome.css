@@ -598,14 +598,14 @@
         border-width: 0 2px 2px 0;
         transform: rotate(45deg);
     }
-    .flite-review-sample  .book-review #next-step-no-login,
+    /* .flite-review-sample  .book-review #next-step-no-login,
     .flite-review-sample  .book-review #next-step,.sub-btn{
         background: #5c0632;
         color:white;
         font-size:14px;
         font-weight:500;
 
-    }
+    } */
 
     .flight-sign-review {
         margin:20px 0;
@@ -941,18 +941,21 @@
     
     
     .flite-review-sample  .book-review #next-step-no-login,
-    .flite-review-sample  .book-review #next-step{
+    .flite-review-sample  .book-review #next-step,.gradient-button{
         background: #5c0632;
         color:white;
         font-size:14px;
         font-weight:500;
-        border: 2px solid #5c0632;
+        border: 2px solid #5c0632 !important;
     }
     .flite-review-sample  .book-review #next-step-no-login:hover,
     .flite-review-sample  .book-review #next-step:hover{
-      background-color: #fff;
-      color: #5c0632;  
-      border: 2px solid #5c0632;
+      background: #fff !important;
+      color: #5c0632 !important;  
+      border: 2px solid #5c0632 !important;
+    }
+    .gradient-button{
+        padding: 10px;
     }
 
 
