@@ -56,7 +56,7 @@
                     
                     {% if user.is_authenticated %}
                     <div style="padding-bottom:10px;width:400px">
-                        <form method="get" action="{% url 'book_checkout' flight_offer_id=flight_offer_id travelers_id=travelers_id %}">
+                        <form method="get" action="{% url 'book_checkout' flight_offer_id=flight_offer_id  %}">
                             <label for="promo_code">Promotion Code</label>
                             <div class="row">
                                 <div class="f-item one-half">
@@ -86,7 +86,7 @@
 
                     <div>
                        
-                        <form method="post" action="{% url 'book_checkout' flight_offer_id=flight_offer_id travelers_id=travelers_id %}">
+                        <form method="post" action="{% url 'book_checkout' flight_offer_id=flight_offer_id  %}">
                             {% csrf_token %}
                             <table class="table">
                             <tbody>

@@ -3,7 +3,7 @@ from django import forms
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
-from .models import Traveler, GENDER, MALE, FLIGHT_CLASS, OFFER_TYPE
+from .models import Traveler, UserProFile, User, GENDER, MALE, FLIGHT_CLASS, OFFER_TYPE
 MOST_SEGMENTS, AT_LEAST_ONE_SEGMENT, ALL_SEGMENTS = "MOST_SEGMENTS", "AT_LEAST_ONE_SEGMENT", "ALL_SEGMENTS"
 
 COVERAGE_TYPE = (
@@ -322,3 +322,31 @@ class TravelerEditForm(forms.ModelForm):
      class Meta:
             model = Traveler
             exclude = ("id","index", "created_on", "updated_on")
+
+
+
+
+
+
+
+
+
+
+#############users profil pic################
+from django.contrib.auth.forms import UserCreationForm
+class ProPicForm(forms.ModelForm):
+    class Meta:
+        model = UserProFile
+        fields = ['proPic']
+
+
+
+class SignUpFormUralA(UserCreationForm):
+    email = forms.EmailField(label='Email address', required=True,)
+
+    class Meta:
+        model = User
+        fields = ('username', 'password1','password2','email')
+
+
+

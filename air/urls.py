@@ -8,8 +8,8 @@ urlpatterns = [
     path('book-review/<str:flight>/', views.book_review, name="book_review"),
    
     path('book/<str:flight>/', views.book_travelers, name="book_travelers"),
-    # path('book/checkout/<int:flight_offer_id>/', views.book_checkout, name="book_checkout"),
-    path('book/checkout/<int:flight_offer_id>/<int:travelers_id>/', views.book_checkout, name="book_checkout"),
+    path('book/checkout/<int:flight_offer_id>/', views.book_checkout, name="book_checkout"),
+    # path('book/checkout/<int:flight_offer_id>/<int:travelers_id>/', views.book_checkout, name="book_checkout"),
     
     path('book/create-checkout-session/<int:flight_offer_id>/', views.create_checkout_session, name="flight_create_checkout"), # login required
     path('book/payment/success', views.payment_success, name="flight_payment_success"),
@@ -20,6 +20,10 @@ urlpatterns = [
     # path('flights', views.flights, name='flights'),
     path('flights', views.FlightSearchView.as_view(), name='flights'),
 
-    path('test_book_travelers/<str:flight>/', views.test_book_travelers, name="test_book_travelers"),
+    path('test_book_travelers/<str:flight>/', views.book_travelers, name="test_book_travelers"),
 
-    path('mybookings/', views.mybookings, name='dashboard-mybookings'),]
+    path('mybookings/', views.mybookings, name='dashboard-mybookings'),
+    path('AddProPic/', views.AddProPic, name='add_pro_pic'),
+    path('ProPicChange/', views.ProPicChange, name='pro_pic_change'),
+    
+    ]

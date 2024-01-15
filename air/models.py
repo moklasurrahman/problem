@@ -229,4 +229,9 @@ class Traveler(models.Model):
 
 
 
-     
+
+######################## user profile pic #########################
+        
+class UserProFile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_profile')
+    proPic = models.ImageField(upload_to='ProfilePic', blank=True)
