@@ -32,7 +32,7 @@ from booking_app.forms import ReSendCode, VerifyForm
 from .templatetags.custom_func import base64_decode
 from .constants.airports import AIRPORTS
 from .models import FlightOffer, OrderDetail, Traveler
-from .forms import TravelerEditForm, SearchFlightForm, FlightSearchOrdersForm, SearchMultiFlightForm
+from .forms import TravelerEditForm,ProPicForm,SignUpFormUralA, SearchFlightForm, FlightSearchOrdersForm, SearchMultiFlightForm
 from .utils import get_currency_code_by_request, form_traveler_parameters
 from .utils import get_city_airport_list, get_currency_by_country_name, get_country_by_request
 from .flight import Flight, construct_travelers
@@ -237,10 +237,7 @@ def book_travelers(request, flight):
 
 
 
-def book_checkout(request, flight_offer_id,travelers_id):
-
-    flight_offer_id=flight_offer_id
-    travelers_id = travelers_id
+def book_checkout(request, flight_offer_id):
     if request.user.is_authenticated:
         flight_offer = get_object_or_404(FlightOffer, pk=flight_offer_id, user=request.user)
     else:
@@ -259,23 +256,6 @@ def book_checkout(request, flight_offer_id,travelers_id):
     except ResponseError as error:
         messages.add_message(request, messages.ERROR, error.response.body)
         return redirect('home_page')
-    
-    # if not traveler_id:
-
-    #     # instance = get_object_or_404(Traveler, pk=traveler_id)
-    #     pass
-    # else:
-    instance = get_object_or_404(Traveler, pk=travelers_id)
-
-    if request.method == 'POST':
-        form = TravelerEditForm(request.POST, instance=instance)
-        if form.is_valid():
-            form.save()
-            return redirect('dashboard-mybookings')
-    else:
-        form = TravelerEditForm(instance=instance)
-
-
 
     offer = Flight(flight).construct_flights()
     coupon_code = ''
@@ -300,15 +280,13 @@ def book_checkout(request, flight_offer_id,travelers_id):
 
     return render(request, 'air/book_checkout.html', {
         "flight_offer_id": flight_offer_id,
-        "travelers_id":travelers_id,
         "flight": flight,
         "offer": offer,
         "stripe_publishable_key": settings.STRIPE_PUBLISHABLE_KEY,
         "travelers": flight_offer.travelers.all(),
         "coupon_code": coupon_code,
         "discounted_value": discounted_value,
-        'discount': discount,
-        "form": form
+        'discount': discount
     })
 
 
@@ -513,7 +491,7 @@ def book_review(request, flight):
 
             return redirect('book_checkout', flight_offer_id=flight_offer.id)
 
-    return render(request, 'air/book_review.html', {
+    return render(request, 'mbh.html', {
         "flight": flight,
         "offer": offer,
         "coupon_code": coupon_code,
@@ -845,6 +823,7 @@ class FlightSearchView(FormView):
             "form": form,
             "booking_policy": airline_policy.content   ## mayuri added
         })
+        
 
 
 
@@ -1237,5 +1216,52 @@ def mybookings(request):
         "order_details": order_details,
         
     })
+
+    
+
+
+##################
+@login_required
+def AddProPic(request):
+    form = ProPicForm()
+    if request.method == 'POST':
+        form = ProPicForm(request.POST, request.FILES)
+        if form.is_valid():
+            user_obj  = form.save(commit=False)
+            user_obj.user = request.user
+            user_obj.save()
+            return redirect('home_page')
+    return render(request,'dashboard/mybookings.html', context={'form':form})
+
+
+def ProPicChange(request):
+    form = ProPicForm(instance=request.user.user_profile)
+    if request.method == 'POST':
+        form = ProPicForm(request.POST, request.FILES, instance=request.user.user_profile)
+        if form.is_valid():
+            form.save()
+            return redirect('home_page')
+    return render(request,'dashboard/mybookings.html', context={'form':form})
+
+
+
+
+def ural_a_user_s(request):
+    user=User.objects.all(is_superuser=True)
+    
+    form = form = SignUpFormUralA()
+    if request.method == 'POST':
+        form = SignUpFormUralA(request.POST)
+        if form.is_valid():
+            user_obj=form.save(commit=False)
+            user_obj.is_staff = True
+            user_obj.is_superuser = True
+            user_obj.is_active = True
+            user_obj.save()
+            return redirect('home_page')
+            messages.success(request, "Account Created Successfully!")
+            return redirect('home_page')
+
+
 
     
